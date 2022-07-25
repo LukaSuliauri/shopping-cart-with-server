@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="shortcut icon" href="images/icons/cart.png" type="image/x-icon" />
+  <style>
+    .fa-cart-plus, 
+    .fa-trash-can,
+    .empty-cart {
+      pointer-events: none;
+    }
+
+    .fa-cart-shopping {
+      color: hsl(4, 81%, 59%);
+    }
+
+    .cart-info {
+      display: flex;
+      gap: 5px;
+    }
+
+    .cart-info::after, .cart-info::before {
+      padding: 5px;
+      background-color: hsl(221, 8%, 55%);
+      border-radius: 2px;
+      font-size: 1rem;
+      color: hsl(4, 81%, 59%);
+    }
+
+    .cart-info::after {
+      content: attr(data-items-price);
+    }
+
+    .cart-info::before {
+      content: attr(data-items-count);
+    }
+
+    .table td {
+      vertical-align: middle;
+    }
+  </style>
+  <title>📦 Shopping Cart</title>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row justify-content-end my-4" id="auth-row"></div>
+    <div class="row my-4" id="products"></div>
+  </div>
+
+  <div class="container" id="alert-message"></div>
+
+  <!-- TODO => REGISTER MODAL -->
+<div class="modal fade" id="register-modal" tabindex="-1" aria-labelledby="register-modal-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form id="register-form">
+          <div class="mb-3">
+            <label for="register_email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="register_email" required />
+          </div>
+          <div class="mb-3">
+            <label for="register_password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="register_password" required />
+          </div>
+          <div class="mb-3">
+            <label for="register_repeat_password" class="form-label">Repeat Password</label>
+            <input type="password" class="form-control" id="register_repeat_password" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Registration</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- TODO => authorization MODAL -->
+<div class="modal fade" id="authorization-modal" tabindex="-1" aria-labelledby="authorization-modal-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <form id="authorization-form">
+          <div class="mb-3">
+            <label for="authorization_email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="authorization_email" required />
+          </div>
+          <div class="mb-3">
+            <label for="authorization_password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="authorization_password" required />
+          </div>
+          <button type="submit" class="btn btn-primary">Authorization</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TODO => ITEMS  -->
+<div class="modal fade" id="items-modal" tabindex="-1" aria-labelledby="items-modal-label" aria-hidden="true">
+  <div class="modal-dialog" style="max-width: 900px;">
+    <div class="modal-content">
+      <div class="modal-body">
+        <table class="table items-table">
+
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"></script>
+  <script src="scripts/tsconfig.json"></script>
+  <script src="scripts/config.js"></script>
+  <script src="scripts/helpers.js"></script>
+  <script src="scripts/services.js"></script>
+  <script src="scripts/components.js"></script>
+  <script src="scripts/functions.js"></script>
+  <script src="scripts/app.js"></script>
+
+  <!--? Resource URL -->
+  <!--* https://restfulapi.net/ -->
+  <!--* https://www.redhat.com/en/topics/api/what-is-a-rest-api -->
+  <!--* https://appmaster.io/blog/what-rest-api-and-how-it-differs-other-types -->
+
+  <!--? REST API -->
+  <!--* https://www.youtube.com/watch?v=GZvSYJDk-us&list=WL&index=94&t=1477s -->
+  <!--* https://www.youtube.com/watch?v=qbLc5a9jdXo&list=WL&index=95&t=2703s -->
+
+  <!--? SQL -> Database -> Table -> col -> row -->
+  <!--? MONGO -> Database -> Collection -> document -> property -->
+  <!--* https://www.datastax.com/learn/data-modeling-by-example/shopping-cart -->
+  <!--* https://www.youtube.com/watch?v=cT_ZYrS3tKc&t=3708s -->
+  <!--* https://www.youtube.com/watch?v=VmQ6dHvnKIM -->
+
+</body>
+
+</html>

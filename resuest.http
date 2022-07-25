@@ -1,0 +1,6 @@
+# GET All products
+GET http://127.0.0.1:3000/products
+###
+
+#GET One product
+GET http://127.0.0.1:3000/products/e4bf66c4-6ff3-4c36-a794-ff1abc4fd3ac
